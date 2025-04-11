@@ -1,0 +1,2 @@
+# workshopTemplate
+testing project
