@@ -1,0 +1,68 @@
+<!-- Required JS -->
+
+<!-- Popper.js -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-IQsoLXlXmmV+T3cKEjNvZl+K+QY5PzU9aUz2I1d9iY4kZBrwAvBxrq1oZ9G5qCak" crossorigin="anonymous"></script>
+
+<!-- SimpleBar -->
+<script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
+
+<!-- Bootstrap Bundle (includes Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-qnNWQpAcWyTyozU93pmcN+ZfJc2Wq5Ag9V65OQXLKrmxqvRGi9ff4E47N1XpY+a2" crossorigin="anonymous"></script>
+
+<!-- Custom Font (local) -->
+<script src="../assets/js/fonts/custom-font.js"></script>
+
+<!-- Pcoded (local) -->
+<script src="../assets/js/pcoded.js"></script>
+
+<!-- Feather Icons -->
+<script src="https://cdn.jsdelivr.net/npm/feather-icons@4.29.1/dist/feather.min.js"></script>
+
+<!-- Layout Configuration -->
+<!-- Dark layout preference -->
+@@if (pc_dark_layout == 'default') {
+<script>
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        dark_layout = 'true';
+    } else {
+        dark_layout = 'false';
+    }
+    layout_change_default();
+    layout_change(dark_layout === 'true' ? 'dark' : 'light');
+</script>
+}
+
+@@if (pc_dark_layout != 'default') {
+    @@if (pc_dark_layout == 'true') {
+        <script>layout_change('dark');</script>
+    }
+    @@if (pc_dark_layout == 'false') {
+        <script>layout_change('light');</script>
+    }
+}
+
+<!-- Box Container -->
+@@if (pc_box_container == 'true') {
+    <script>change_box_container('true');</script>
+}
+@@if (pc_box_container == 'false') {
+    <script>change_box_container('false');</script>
+}
+
+<!-- RTL Layout -->
+@@if (pc_rtl_layout == 'true') {
+    <script>layout_rtl_change('true');</script>
+}
+@@if (pc_rtl_layout == 'false') {
+    <script>layout_rtl_change('false');</script>
+}
+
+<!-- Preset Theme -->
+@@if (pc_preset_theme != "") {
+    <script>preset_change("@@pc_preset_theme");</script>
+}
+
+<!-- Font Change -->
+@@if (font_name != "") {
+    <script>font_change("@@font_name");</script>
+}
